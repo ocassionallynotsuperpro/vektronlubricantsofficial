@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vektron Lubricants - Quality Certificates</title>
+    <link
+      rel="shortcut icon"
+      href="image/transparent-images/Vecktron_Logos-removebg-preview.png"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/quality.css">
+  </head>
+  <body>
+    <!-- ===== PARTICLES ===== -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- ===== HEADER SECTION ===== -->
+    <header>
+      <div class="header-top">
+        <div class="container">
+          <div class="header-top-content">
+            <div class="header-contact">
+              <a href="tel:+971545079371">
+                <i class="fas fa-phone"></i> +971 54 507 9371
+              </a>
+              <a href="mailto:vektronlubricants@hotmail.com">
+                <i class="fas fa-envelope"></i> vektronlubricants@hotmail.com
+              </a>
+            </div>
+            <div class="header-social">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-main" id="headerMain">
+        <div class="container">
+          <div class="header-content">
+            <div class="logo">
+              <a href="index.html">
+                <img
+                  src="image/transparent-images/Vecktron_Logos-removebg-preview.png"
+                  style="height: 52px; width: auto;"
+                  alt="Vektron Lubricants"
+                />
+              </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+              <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="Quality-Certificates.html" class="active">Quality Certificates</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== PAGE BANNER ===== -->
+    <div class="page-banner">
+      <div class="container">
+        <h1>Quality <span>Certificates</span></h1>
+        <p>Internationally approved lubricant certifications and standards</p>
+      </div>
+    </div>
+
+    <main class="container">
+      <!-- VIEW 1: CERTIFICATE GALLERY -->
+      <section id="certificate-gallery-view" class="page-section">
+        <!-- Stats Bar -->
+        <div class="stats-bar reveal">
+          <div class="stat-item">
+            <div class="stat-number">5+</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">API</div>
+            <div class="stat-label">Approved</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">ACEA</div>
+            <div class="stat-label">Compliant</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">OEM</div>
+            <div class="stat-label">Certified</div>
+          </div>
+        </div>
+
+        <div class="section-title reveal">
+          <h2>Our Certifications</h2>
+          <p>Click on any card to view the full approval document</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- Certificate 1 -->
+          <article class="cert-card reveal reveal-delay-1" onclick="openCertificate(1)">
+            <div class="cert-img-wrapper">
+              <img src="image/certificate/API.jpg" alt="API Approval" />
+              <div class="cert-badge"><i class="fas fa-certificate"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>American Petroleum Institute (API) Approval</h3>
+              <p>Certified for Toyota, Honda, and Japanese manufacturers meeting strict performance standards.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Certificate 2 -->
+          <article class="cert-card reveal reveal-delay-2" onclick="openCertificate(2)">
+            <div class="cert-img-wrapper">
+              <img src="image/certificate/accea.jpg" alt="ACEA Certification" />
+              <div class="cert-badge"><i class="fas fa-award"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>European Automobile Manufacturers' Association</h3>
+              <p>ACEA certified — green & clean, smart & efficient, safe & reliable mobility solutions.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Certificate 3 -->
+          <article class="cert-card reveal reveal-delay-3" onclick="openCertificate(3)">
+            <div class="cert-img-wrapper">
+              <img src="image/certificate/mercedes.jpg" alt="Mercedes Benz Approval" />
+              <div class="cert-badge"><i class="fas fa-star"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>Mercedes Benz Approval</h3>
+              <p>MB-Approval 229.52 specifications for high-performance gasoline and diesel engines.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Certificate 4 -->
+          <article class="cert-card reveal reveal-delay-4" onclick="openCertificate(4)">
+            <div class="cert-img-wrapper">
+              <img src="image/certificate/volkswagen.jpg" alt="Volkswagen Approval" />
+              <div class="cert-badge"><i class="fas fa-check-double"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>Volkswagen Approval</h3>
+              <p>Compliant with VW 504.00 / 507.00 specifications for modern diesel engines.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- Certificate 5 -->
+          <article class="cert-card reveal reveal-delay-5" onclick="openCertificate(5)">
+            <div class="cert-img-wrapper">
+              <img src="image/certificate/porsche.jpg" alt="Porsche Approval" />
+              <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>Porsche Approval Certificates</h3>
+              <p>Rigorously tested for Porsche engines including advanced dry-sump lubrication systems.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- VIEW 2: CERTIFICATE DETAIL -->
+      <section id="certificate-detail-view" class="page-section">
+        <div class="detail-container">
+          <div class="detail-header">
+            <h2 id="detail-title">Certificate Title</h2>
+            <button class="back-btn" onclick="closeCertificate()">
+              <i class="fas fa-arrow-left"></i> Back to List
+            </button>
+          </div>
+
+          <div class="certificate-display" id="display-area">
+            <!-- Content injected via JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-widget">
+            <h3>Vektron Lubricants</h3>
+            <p>Providing high-quality, internationally certified lubricant solutions for automotive and industrial applications across the UAE and beyond.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+          <div class="footer-widget">
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="product.html">Products</a></li>
+              <li><a href="Quality-Certificates.html">Quality Certificates</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-widget">
+            <h3>Contact Info</h3>
+            <ul class="footer-links">
+              <li><a href="tel:+971545079371"><i class="fas fa-phone" style="color:var(--yellow-bright);font-size:0.75rem;"></i> +971 54 507 9371</a></li>
+              <li><a href="mailto:vektronlubricants@hotmail.com"><i class="fas fa-envelope" style="color:var(--yellow-bright);font-size:0.75rem;"></i> vektronlubricants@hotmail.com</a></li>
+            </ul>
+          </div>
+          <div class="footer-widget">
+            <h3>Newsletter</h3>
+            <p style="margin-bottom: 16px;">Stay updated with our latest products and certifications.</p>
+            <div class="form-group">
+              <input type="email" placeholder="Enter your email" />
+            </div>
+            <button class="btn" onclick="showToast('Subscribed successfully!')">Subscribe</button>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Vektron Lubricants. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ===== PDF.JS ===== -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js";
+    </script>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+      // ============================================
+      // PARTICLES GENERATION
+      // ============================================
+      (function createParticles() {
+        const container = document.getElementById('particles');
+        if (!container) return;
+        const count = 30;
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement('div');
+          p.classList.add('particle');
+          p.style.left = Math.random() * 100 + '%';
+          p.style.animationDuration = (8 + Math.random() * 12) + 's';
+          p.style.animationDelay = (Math.random() * 10) + 's';
+          p.style.width = p.style.height = (1 + Math.random() * 2.5) + 'px';
+          container.appendChild(p);
+        }
+      })();
+
+      // ============================================
+      // HEADER SCROLL EFFECT
+      // ============================================
+      const headerMain = document.getElementById('headerMain');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          headerMain.classList.add('scrolled');
+        } else {
+          headerMain.classList.remove('scrolled');
+        }
+      });
+
+      // ============================================
+      // SCROLL REVEAL
+      // ============================================
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+      // ============================================
+      // MOBILE MENU
+      // ============================================
+      const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+      const nav = document.querySelector('nav');
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        });
+      }
+
+      // Close mobile menu on link click
+      document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        });
+      });
+
+      // ============================================
+      // TOAST NOTIFICATION
+      // ============================================
+      function showToast(message) {
+        // Remove existing toast
+        const existing = document.querySelector('.toast');
+        if (existing) existing.remove();
+
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+          <button class="toast-close" onclick="this.parentElement.remove()"><i class="fas fa-times"></i></button>
+          <span>${message}</span>
+        `;
+        document.body.appendChild(toast);
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            toast.classList.add('show');
+          });
+        });
+
+        setTimeout(() => {
+          toast.classList.remove('show');
+          setTimeout(() => toast.remove(), 400);
+        }, 3500);
+      }
+
+      // ============================================
+      // CERTIFICATE DATA
+      // ============================================
+      const certificates = {
+        1: {
+          title: "API Approval Document",
+          imageLink: "https://vektronlubricants.com/image/1PDF.pdf",
+          type: "pdf",
+        },
+        2: {
+          title: "ACEA Certification Document",
+          imageLink: "https://vektronlubricants.com/image/2PDF.pdf",
+          type: "pdf",
+        },
+        3: {
+          title: "Mercedes-Benz MB-Approval 229.52",
+          imageLink: "https://vektronlubricants.com/image/3PDF.pdf",
+          type: "pdf",
+        },
+        4: {
+          title: "Volkswagen VW 504.00 / 507.00",
+          imageLink: "https://vektronlubricants.com/image/4PDF.pdf",
+          type: "pdf",
+        },
+        5: {
+          title: "Porsche A40 Approval",
+          imageLink: "https://vektronlubricants.com/image/5PDF.pdf",
+          type: "pdf",
+        },
+      };
+
+      const galleryView = document.getElementById("certificate-gallery-view");
+      const detailView = document.getElementById("certificate-detail-view");
+      const displayArea = document.getElementById("display-area");
+      const detailTitle = document.getElementById("detail-title");
+
+      // ============================================
+      // PDF RENDERING (MOBILE)
+      // ============================================
+      async function renderPdfMobile(url) {
+        displayArea.innerHTML = `
+          <div class="pdf-loading">
+            <div class="spinner"></div>
+            <span>Loading document...</span>
+          </div>
+        `;
+
+        try {
+          const loadingTask = pdfjsLib.getDocument(url);
+          const pdf = await loadingTask.promise;
+          displayArea.innerHTML = "";
+
+          const screenWidth = window.innerWidth;
+          let scale = screenWidth < 600 ? 1.8 : 2.2;
+
+          const container = document.createElement("div");
+          container.style.cssText = "width:100%;display:flex;flex-direction:column;align-items:center;background:#1a1a2e;padding:0;margin:0;";
+
+          for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            const page = await pdf.getPage(pageNum);
+            const viewport = page.getViewport({ scale: scale });
+
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            canvas.style.cssText = "width:100%;height:auto;display:block;margin:0;padding:0;box-shadow:0 2px 5px rgba(0,0,0,0.3);";
+
+            await page.render({ canvasContext: context, viewport: viewport }).promise;
+            container.appendChild(canvas);
+          }
+
+          displayArea.appendChild(container);
+        } catch (error) {
+          console.error("Error loading PDF:", error);
+          displayArea.innerHTML = `
+            <div class="pdf-loading">
+              <i class="fas fa-exclamation-triangle" style="font-size:2rem;color:var(--yellow-bright);"></i>
+              <span>Could not load PDF viewer on this device.</span>
+              <a href="${url}" target="_blank" style="color:var(--yellow-bright);text-decoration:underline;font-size:0.85rem;margin-top:8px;">Open PDF in new window <i class="fas fa-external-link-alt" style="font-size:0.75rem;"></i></a>
+            </div>
+          `;
+        }
+      }
+
+      // ============================================
+      // OPEN / CLOSE CERTIFICATE
+      // ============================================
+      function openCertificate(id) {
+        const data = certificates[id];
+        if (!data) return;
+
+        detailTitle.innerText = data.title;
+        displayArea.innerHTML = "";
+
+        galleryView.style.display = "none";
+        detailView.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        const isMobile = window.innerWidth <= 768;
+
+        if (data.type === "pdf") {
+          if (isMobile) {
+            renderPdfMobile(data.imageLink);
+          } else {
+            displayArea.innerHTML = `
+              <div class="pdf-loading" id="pdfDesktopLoading">
+                <div class="spinner"></div>
+                <span>Loading document...</span>
+              </div>
+              <iframe
+                src="${data.imageLink}#toolbar=1&navpanes=1"
+                type="application/pdf"
+                width="100%"
+                height="100%"
+                onload="document.getElementById('pdfDesktopLoading').style.display='none';"
+              >
+                <p>Unable to display PDF. <a href="${data.imageLink}" target="_blank" style="color:var(--yellow-bright);">Download the PDF</a>.</p>
+              </iframe>
+            `;
+          }
+        } else {
+          displayArea.innerHTML = `<img src="${data.imageLink}" alt="${data.title}" style="max-width:100%;height:auto;">`;
+        }
+      }
+
+      function closeCertificate() {
+        detailView.style.display = "none";
+        galleryView.style.display = "block";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        // Re-observe newly visible reveal elements
+        document.querySelectorAll('#certificate-gallery-view .reveal:not(.visible)').forEach(el => {
+          revealObserver.observe(el);
+        });
+      }
+    </script>
+  </body>
+</html>
