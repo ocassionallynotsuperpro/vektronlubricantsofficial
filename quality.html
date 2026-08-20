@@ -67,7 +67,7 @@
               <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="product.html">Products</a></li>
-                <li><a href="Quality-Certificates.html" class="active">Quality Certificates</a></li>
+                <li><a href="quality.html" class="active">Quality Certificates</a></li>
                 <li><a href="service.html">Services</a></li>
                 <li><a href="contact.html">Contact</a></li>
               </ul>
@@ -108,6 +108,7 @@
           </div>
         </div>
 
+        <!-- General Certificates -->
         <div class="section-title reveal">
           <h2>Our Certifications</h2>
           <p>Click on any card to view the full approval document</p>
@@ -189,6 +190,104 @@
             </div>
           </article>
         </div>
+
+        <!-- Product TDS Section -->
+        <div class="section-title reveal" style="margin-top: 60px;">
+          <h2>Product Technical Data Sheets</h2>
+          <p>Click on any card to view the full TDS document</p>
+        </div>
+
+        <div class="cert-grid">
+          <!-- TDS 6: SAE 0W-20 -->
+          <article class="cert-card reveal reveal-delay-1" onclick="openCertificate(6)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/SAE-0W-20enw.png" alt="SAE 0W-20 TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 0W-20 — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 0W-20 engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- TDS 7: SAE 5W-30 -->
+          <article class="cert-card reveal reveal-delay-2" onclick="openCertificate(7)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/SAE-5W-30new.png" alt="SAE 5W-30 TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 5W-30 — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 5W-30 engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- TDS 8: SAE 5W-40 -->
+          <article class="cert-card reveal reveal-delay-3" onclick="openCertificate(8)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/5W-40-new.png" alt="SAE 5W-40 TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 5W-40 — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 5W-40 engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- TDS 9: SAE 5W-30 Diesel -->
+          <article class="cert-card reveal reveal-delay-4" onclick="openCertificate(9)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/5W-30-diesel.png" alt="SAE 5W-30 Diesel TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 5W-30 Diesel — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 5W-30 Diesel engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- TDS 10: SAE 10W-40 -->
+          <article class="cert-card reveal reveal-delay-5" onclick="openCertificate(10)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/10W-40-new.png" alt="SAE 10W-40 TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 10W-40 — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 10W-40 engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+
+          <!-- TDS 11: SAE 10W-30 -->
+          <article class="cert-card reveal reveal-delay-1" onclick="openCertificate(11)">
+            <div class="cert-img-wrapper">
+              <img src="image/transparent-images/10W-30-new.png" alt="SAE 10W-30 TDS" />
+              <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
+            </div>
+            <div class="cert-body">
+              <h3>SAE 10W-30 — Technical Data Sheet</h3>
+              <p>Full specifications and performance data for SAE 10W-30 engine oil.</p>
+              <span class="cert-btn">
+                View Document <i class="fas fa-arrow-right"></i>
+              </span>
+            </div>
+          </article>
+        </div>
       </section>
 
       <!-- VIEW 2: CERTIFICATE DETAIL -->
@@ -227,7 +326,7 @@
             <ul class="footer-links">
               <li><a href="index.html">Home</a></li>
               <li><a href="product.html">Products</a></li>
-              <li><a href="Quality-Certificates.html">Quality Certificates</a></li>
+              <li><a href="quality.html">Quality Certificates</a></li>
               <li><a href="service.html">Services</a></li>
               <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -321,7 +420,6 @@
         });
       }
 
-      // Close mobile menu on link click
       document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('active');
@@ -335,7 +433,6 @@
       // TOAST NOTIFICATION
       // ============================================
       function showToast(message) {
-        // Remove existing toast
         const existing = document.querySelector('.toast');
         if (existing) existing.remove();
 
@@ -363,6 +460,7 @@
       // CERTIFICATE DATA
       // ============================================
       const certificates = {
+        // --- General Certifications ---
         1: {
           title: "API Approval Document",
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/1PDF.pdf",
@@ -380,12 +478,46 @@
         },
         4: {
           title: "Volkswagen VW 504.00 / 507.00",
-          imageLink: "https://vvektronlubricantsofficial.vercel.app/image/4PDF.pdf",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/4PDF.pdf",
           type: "pdf",
         },
         5: {
           title: "Porsche A40 Approval",
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/5PDF.pdf",
+          type: "pdf",
+        },
+
+        // --- Product TDS Documents ---
+        // IMPORTANT: Replace the "imageLink" URLs below with your actual TDS PDF file paths.
+        // Change "type" from "image" to "pdf" once you have the real PDF files ready.
+        6: {
+          title: "SAE 0W-20 — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-0W-20-TDS.pdf",
+          type: "pdf",
+        },
+        7: {
+          title: "SAE 5W-30 — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-SAE-5W-30-C3.pdf",
+          type: "pdf",
+        },
+        8: {
+          title: "SAE 5W-40 — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-5W-40-TDS.pdf",
+          type: "pdf",
+        },
+        9: {
+          title: "SAE 5W-30 Diesel — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-5W-30-DIESEL-TDS.pdf",
+          type: "pdf",
+        },
+        10: {
+          title: "SAE 10W-40 — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-10W-40-TDS.pdf",
+          type: "pdf",
+        },
+        11: {
+          title: "SAE 10W-30 — Technical Data Sheet",
+          imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-10W-30-TDS.pdf",
           type: "pdf",
         },
       };
@@ -490,11 +622,25 @@
         galleryView.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
 
-        // Re-observe newly visible reveal elements
         document.querySelectorAll('#certificate-gallery-view .reveal:not(.visible)').forEach(el => {
           revealObserver.observe(el);
         });
       }
+
+      // ============================================
+      // AUTO-OPEN FROM URL PARAMETER
+      // When coming from the product page via ?cert=X
+      // ============================================
+      window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const certId = params.get('cert');
+        if (certId) {
+          // Small delay to ensure the page is fully rendered
+          setTimeout(() => {
+            openCertificate(parseInt(certId));
+          }, 300);
+        }
+      });
     </script>
   </body>
 </html>
