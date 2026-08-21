@@ -9,18 +9,59 @@
       href="image/transparent-images/Vecktron_Logos-removebg-preview.png"
       type="image/x-icon"
     />
-
-    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
-    <!-- Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <link rel="stylesheet" href="assets/quality.css">
+
+    <style>
+      /* ========== LANGUAGE TOGGLE ========== */
+      .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid rgba(245, 197, 24, 0.2);
+        flex-shrink: 0;
+        margin-left: 4px;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted, #5a5a72);
+        padding: 5px 10px;
+        font-size: 0.68rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: var(--font-body, 'Roboto', sans-serif);
+        letter-spacing: 0.5px;
+      }
+
+      .lang-btn.active {
+        background: rgba(245, 197, 24, 0.15);
+        color: var(--yellow-bright, #f5c518);
+        text-shadow: 0 0 8px rgba(245, 197, 24, 0.3);
+      }
+
+      .lang-btn:hover:not(.active) {
+        color: var(--text-secondary, #9a9ab0);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .lang-divider {
+        width: 1px;
+        height: 16px;
+        background: rgba(245, 197, 24, 0.15);
+      }
+    </style>
   </head>
   <body>
     <!-- ===== PARTICLES ===== -->
@@ -44,6 +85,13 @@
               <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
               <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
               <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+              <!-- Language Toggle -->
+              <div class="lang-toggle">
+                <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                <div class="lang-divider"></div>
+                <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+              </div>
             </div>
           </div>
         </div>
@@ -65,11 +113,11 @@
             </button>
             <nav>
               <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="product.html">Products</a></li>
-                <li><a href="quality.html" class="active">Quality Certificates</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+                <li><a href="quality.html" class="active" data-i18n="nav_quality">Quality Certificates</a></li>
+                <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -80,8 +128,8 @@
     <!-- ===== PAGE BANNER ===== -->
     <div class="page-banner">
       <div class="container">
-        <h1>Quality <span>Certificates</span></h1>
-        <p>Internationally approved lubricant certifications and standards</p>
+        <h1><span data-i18n="banner_quality">Quality</span> <span data-i18n="banner_certificates">Certificates</span></h1>
+        <p data-i18n="banner_subtitle">Internationally approved lubricant certifications and standards</p>
       </div>
     </div>
 
@@ -92,26 +140,26 @@
         <div class="stats-bar reveal">
           <div class="stat-item">
             <div class="stat-number">5+</div>
-            <div class="stat-label">Certifications</div>
+            <div class="stat-label" data-i18n="stat_certs">Certifications</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">API</div>
-            <div class="stat-label">Approved</div>
+            <div class="stat-label" data-i18n="stat_api">Approved</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">ACEA</div>
-            <div class="stat-label">Compliant</div>
+            <div class="stat-label" data-i18n="stat_acea">Compliant</div>
           </div>
           <div class="stat-item">
             <div class="stat-number">OEM</div>
-            <div class="stat-label">Certified</div>
+            <div class="stat-label" data-i18n="stat_oem">Certified</div>
           </div>
         </div>
 
         <!-- General Certificates -->
         <div class="section-title reveal">
-          <h2>Our Certifications</h2>
-          <p>Click on any card to view the full approval document</p>
+          <h2 data-i18n="section_certs">Our Certifications</h2>
+          <p data-i18n="section_certs_sub">Click on any card to view the full approval document</p>
         </div>
 
         <div class="cert-grid">
@@ -122,10 +170,10 @@
               <div class="cert-badge"><i class="fas fa-certificate"></i></div>
             </div>
             <div class="cert-body">
-              <h3>American Petroleum Institute (API) Approval</h3>
-              <p>Certified for Toyota, Honda, and Japanese manufacturers meeting strict performance standards.</p>
+              <h3 data-i18n="cert1_title">American Petroleum Institute (API) Approval</h3>
+              <p data-i18n="cert1_desc">Certified for Toyota, Honda, and Japanese manufacturers meeting strict performance standards.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -137,10 +185,10 @@
               <div class="cert-badge"><i class="fas fa-award"></i></div>
             </div>
             <div class="cert-body">
-              <h3>European Automobile Manufacturers' Association</h3>
-              <p>ACEA certified — green & clean, smart & efficient, safe & reliable mobility solutions.</p>
+              <h3 data-i18n="cert2_title">European Automobile Manufacturers' Association</h3>
+              <p data-i18n="cert2_desc">ACEA certified — green & clean, smart & efficient, safe & reliable mobility solutions.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -152,10 +200,10 @@
               <div class="cert-badge"><i class="fas fa-star"></i></div>
             </div>
             <div class="cert-body">
-              <h3>Mercedes Benz Approval</h3>
-              <p>MB-Approval 229.52 specifications for high-performance gasoline and diesel engines.</p>
+              <h3 data-i18n="cert3_title">Mercedes Benz Approval</h3>
+              <p data-i18n="cert3_desc">MB-Approval 229.52 specifications for high-performance gasoline and diesel engines.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -167,10 +215,10 @@
               <div class="cert-badge"><i class="fas fa-check-double"></i></div>
             </div>
             <div class="cert-body">
-              <h3>Volkswagen Approval</h3>
-              <p>Compliant with VW 504.00 / 507.00 specifications for modern diesel engines.</p>
+              <h3 data-i18n="cert4_title">Volkswagen Approval</h3>
+              <p data-i18n="cert4_desc">Compliant with VW 504.00 / 507.00 specifications for modern diesel engines.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -182,10 +230,10 @@
               <div class="cert-badge"><i class="fas fa-shield-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>Porsche Approval Certificates</h3>
-              <p>Rigorously tested for Porsche engines including advanced dry-sump lubrication systems.</p>
+              <h3 data-i18n="cert5_title">Porsche Approval Certificates</h3>
+              <p data-i18n="cert5_desc">Rigorously tested for Porsche engines including advanced dry-sump lubrication systems.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -193,8 +241,8 @@
 
         <!-- Product TDS Section -->
         <div class="section-title reveal" style="margin-top: 60px;">
-          <h2>Product Technical Data Sheets</h2>
-          <p>Click on any card to view the full TDS document</p>
+          <h2 data-i18n="section_tds">Product Technical Data Sheets</h2>
+          <p data-i18n="section_tds_sub">Click on any card to view the full TDS document</p>
         </div>
 
         <div class="cert-grid">
@@ -205,10 +253,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 0W-20 — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 0W-20 engine oil.</p>
+              <h3 data-i18n="tds_0w20">SAE 0W-20 — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 0W-20 engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -220,10 +268,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 5W-30 — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 5W-30 engine oil.</p>
+              <h3 data-i18n="tds_5w30">SAE 5W-30 — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 5W-30 engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -235,10 +283,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 5W-40 — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 5W-40 engine oil.</p>
+              <h3 data-i18n="tds_5w40">SAE 5W-40 — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 5W-40 engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -250,10 +298,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 5W-30 Diesel — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 5W-30 Diesel engine oil.</p>
+              <h3 data-i18n="tds_5w30d">SAE 5W-30 Diesel — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 5W-30 Diesel engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -265,10 +313,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 10W-40 — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 10W-40 engine oil.</p>
+              <h3 data-i18n="tds_10w40">SAE 10W-40 — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 10W-40 engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -280,10 +328,10 @@
               <div class="cert-badge"><i class="fas fa-file-alt"></i></div>
             </div>
             <div class="cert-body">
-              <h3>SAE 10W-30 — Technical Data Sheet</h3>
-              <p>Full specifications and performance data for SAE 10W-30 engine oil.</p>
+              <h3 data-i18n="tds_10w30">SAE 10W-30 — Technical Data Sheet</h3>
+              <p data-i18n="tds_desc">Full specifications and performance data for SAE 10W-30 engine oil.</p>
               <span class="cert-btn">
-                View Document <i class="fas fa-arrow-right"></i>
+                <span data-i18n="btn_view">View Document</span> <i class="fas fa-arrow-right"></i>
               </span>
             </div>
           </article>
@@ -296,7 +344,7 @@
           <div class="detail-header">
             <h2 id="detail-title">Certificate Title</h2>
             <button class="back-btn" onclick="closeCertificate()">
-              <i class="fas fa-arrow-left"></i> Back to List
+              <i class="fas fa-arrow-left"></i> <span data-i18n="btn_back">Back to List</span>
             </button>
           </div>
 
@@ -312,8 +360,8 @@
       <div class="container">
         <div class="footer-content">
           <div class="footer-widget">
-            <h3>Vektron Lubricants</h3>
-            <p>Providing high-quality, internationally certified lubricant solutions for automotive and industrial applications across the UAE and beyond.</p>
+            <h3 data-i18n="footer_about">Vektron Lubricants</h3>
+            <p data-i18n="footer_about_text">Providing high-quality, internationally certified lubricant solutions for automotive and industrial applications across the UAE and beyond.</p>
             <div class="social-links">
               <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
               <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -322,33 +370,33 @@
             </div>
           </div>
           <div class="footer-widget">
-            <h3>Quick Links</h3>
+            <h3 data-i18n="footer_quick_links">Quick Links</h3>
             <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="product.html">Products</a></li>
-              <li><a href="quality.html">Quality Certificates</a></li>
-              <li><a href="service.html">Services</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+              <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+              <li><a href="quality.html" data-i18n="nav_quality">Quality Certificates</a></li>
+              <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+              <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
             </ul>
           </div>
           <div class="footer-widget">
-            <h3>Contact Info</h3>
+            <h3 data-i18n="footer_contact">Contact Info</h3>
             <ul class="footer-links">
               <li><a href="tel:+971545079371"><i class="fas fa-phone" style="color:var(--yellow-bright);font-size:0.75rem;"></i> +971 54 507 9371</a></li>
               <li><a href="mailto:vektronlubricants@hotmail.com"><i class="fas fa-envelope" style="color:var(--yellow-bright);font-size:0.75rem;"></i> vektronlubricants@hotmail.com</a></li>
             </ul>
           </div>
           <div class="footer-widget">
-            <h3>Newsletter</h3>
-            <p style="margin-bottom: 16px;">Stay updated with our latest products and certifications.</p>
+            <h3 data-i18n="footer_newsletter">Newsletter</h3>
+            <p style="margin-bottom: 16px;" data-i18n="footer_newsletter_text">Stay updated with our latest products and certifications.</p>
             <div class="form-group">
-              <input type="email" placeholder="Enter your email" />
+              <input type="email" data-i18n-ph="ph_email" placeholder="Enter your email" />
             </div>
-            <button class="btn" onclick="showToast('Subscribed successfully!')">Subscribe</button>
+            <button class="btn" onclick="handleNewsletterSubmit()" data-i18n="btn_subscribe">Subscribe</button>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Vektron Lubricants. All Rights Reserved.</p>
+          <p data-i18n="footer_copyright">&copy; 2025 Vektron Lubricants. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
@@ -363,13 +411,185 @@
     <!-- ===== JAVASCRIPT ===== -->
     <script>
       // ============================================
+      // TRANSLATION SYSTEM
+      // ============================================
+      const translations = {
+        en: {
+          nav_home: "Home",
+          nav_products: "Products",
+          nav_quality: "Quality Certificates",
+          nav_services: "Services",
+          nav_contact: "Contact",
+          banner_quality: "Quality",
+          banner_certificates: "Certificates",
+          banner_subtitle: "Internationally approved lubricant certifications and standards",
+          stat_certs: "Certifications",
+          stat_api: "Approved",
+          stat_acea: "Compliant",
+          stat_oem: "Certified",
+          section_certs: "Our Certifications",
+          section_certs_sub: "Click on any card to view the full approval document",
+          section_tds: "Product Technical Data Sheets",
+          section_tds_sub: "Click on any card to view the full TDS document",
+          cert1_title: "American Petroleum Institute (API) Approval",
+          cert1_desc: "Certified for Toyota, Honda, and Japanese manufacturers meeting strict performance standards.",
+          cert2_title: "European Automobile Manufacturers' Association",
+          cert2_desc: "ACEA certified — green & clean, smart & efficient, safe & reliable mobility solutions.",
+          cert3_title: "Mercedes Benz Approval",
+          cert3_desc: "MB-Approval 229.52 specifications for high-performance gasoline and diesel engines.",
+          cert4_title: "Volkswagen Approval",
+          cert4_desc: "Compliant with VW 504.00 / 507.00 specifications for modern diesel engines.",
+          cert5_title: "Porsche Approval Certificates",
+          cert5_desc: "Rigorously tested for Porsche engines including advanced dry-sump lubrication systems.",
+          tds_0w20: "SAE 0W-20 — Technical Data Sheet",
+          tds_5w30: "SAE 5W-30 — Technical Data Sheet",
+          tds_5w40: "SAE 5W-40 — Technical Data Sheet",
+          tds_5w30d: "SAE 5W-30 Diesel — Technical Data Sheet",
+          tds_10w40: "SAE 10W-40 — Technical Data Sheet",
+          tds_10w30: "SAE 10W-30 — Technical Data Sheet",
+          tds_desc: "Full specifications and performance data for this engine oil.",
+          btn_view: "View Document",
+          btn_back: "Back to List",
+          btn_subscribe: "Subscribe",
+          footer_about: "Vektron Lubricants",
+          footer_about_text: "Providing high-quality, internationally certified lubricant solutions for automotive and industrial applications across the UAE and beyond.",
+          footer_quick_links: "Quick Links",
+          footer_contact: "Contact Info",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Stay updated with our latest products and certifications.",
+          footer_copyright: "\u00A9 2025 Vektron Lubricants. All Rights Reserved.",
+          ph_email: "Enter your email",
+          toast_subscribed: "Subscribed successfully!",
+          toast_lang_switch: "Language changed to English",
+          pdf_loading: "Loading document...",
+          pdf_error_title: "Could not load PDF viewer on this device.",
+          pdf_error_link: "Open PDF in new window",
+          // Certificate titles for detail view
+          detail_1: "API Approval Document",
+          detail_2: "ACEA Certification Document",
+          detail_3: "Mercedes-Benz MB-Approval 229.52",
+          detail_4: "Volkswagen VW 504.00 / 507.00",
+          detail_5: "Porsche A40 Approval",
+          detail_6: "SAE 0W-20 \u2014 Technical Data Sheet",
+          detail_7: "SAE 5W-30 \u2014 Technical Data Sheet",
+          detail_8: "SAE 5W-40 \u2014 Technical Data Sheet",
+          detail_9: "SAE 5W-30 Diesel \u2014 Technical Data Sheet",
+          detail_10: "SAE 10W-40 \u2014 Technical Data Sheet",
+          detail_11: "SAE 10W-30 \u2014 Technical Data Sheet",
+        },
+
+        de: {
+          nav_home: "Startseite",
+          nav_products: "Produkte",
+          nav_quality: "Qualit\u00E4tszertifikate",
+          nav_services: "Dienstleistungen",
+          nav_contact: "Kontakt",
+          banner_quality: "Qualit\u00E4ts",
+          banner_certificates: "Zertifikate",
+          banner_subtitle: "International anerkannte Schmierstoffzertifizierungen und Normen",
+          stat_certs: "Zertifizierungen",
+          stat_api: "Gepr\u00FCft",
+          stat_acea: "Konform",
+          stat_oem: "Zertifiziert",
+          section_certs: "Unsere Zertifizierungen",
+          section_certs_sub: "Klicken Sie auf eine Karte, um das vollst\u00E4ndige Genehmigungsdokument anzuzeigen",
+          section_tds: "Technische Datenbl\u00E4tter der Produkte",
+          section_tds_sub: "Klicken Sie auf eine Karte, um das vollst\u00E4ndige TDS-Dokument anzuzeigen",
+          cert1_title: "American Petroleum Institute (API) Genehmigung",
+          cert1_desc: "Zertifiziert f\u00FCr Toyota, Honda und japanische Hersteller nach strengen Leistungsstandards.",
+          cert2_title: "Verband der Europ\u00E4ischen Automobilhersteller",
+          cert2_desc: "ACEA-zertifiziert \u2014 gr\u00FCn & sauber, smart & effizient, sicher & zuverl\u00E4ssige Mobilit\u00E4tsl\u00F6sungen.",
+          cert3_title: "Mercedes Benz Genehmigung",
+          cert3_desc: "MB-Freigabe 229.52 Spezifikationen f\u00FCr Hochleistungsbenzin- und Dieselmotoren.",
+          cert4_title: "Volkswagen Genehmigung",
+          cert4_desc: "Konform mit VW 504.00 / 507.00 Spezifikationen f\u00FCr moderne Dieselmotoren.",
+          cert5_title: "Porsche Zertifikate",
+          cert5_desc: "Rigorous getestet f\u00FCr Porsche-Motoren einschlie\u00DFlich fortschrittlicher Trockensumpfschmiersysteme.",
+          tds_0w20: "SAE 0W-20 \u2014 Technisches Datenblatt",
+          tds_5w30: "SAE 5W-30 \u2014 Technisches Datenblatt",
+          tds_5w40: "SAE 5W-40 \u2014 Technisches Datenblatt",
+          tds_5w30d: "SAE 5W-30 Diesel \u2014 Technisches Datenblatt",
+          tds_10w40: "SAE 10W-40 \u2014 Technisches Datenblatt",
+          tds_10w30: "SAE 10W-30 \u2014 Technisches Datenblatt",
+          tds_desc: "Vollst\u00E4ndige Spezifikationen und Leistungsdaten f\u00FCr dieses Motor\u00F6l.",
+          btn_view: "Dokument ansehen",
+          btn_back: "Zur\u00FCck zur Liste",
+          btn_subscribe: "Abonnieren",
+          footer_about: "Vektron Lubricants",
+          footer_about_text: "Anbieter hochwertiger, international zertifizierter Schmierstoffl\u00F6sungen f\u00FCr Automobil- und Industrieanwendungen in den VAE und dar\u00FCber hinaus.",
+          footer_quick_links: "Schnelllinks",
+          footer_contact: "Kontaktinfo",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Bleiben Sie auf dem Laufenden mit unseren neuesten Produkten und Zertifizierungen.",
+          footer_copyright: "\u00A9 2025 Vektron Lubricants. Alle Rechte vorbehalten.",
+          ph_email: "Ihre E-Mail eingeben",
+          toast_subscribed: "Erfolgreich abonniert!",
+          toast_lang_switch: "Sprache auf Deutsch umgestellt",
+          pdf_loading: "Dokument wird geladen...",
+          pdf_error_title: "PDF-Viewer konnte auf diesem Ger\u00E4t nicht geladen werden.",
+          pdf_error_link: "PDF in neuem Fenster \u00F6ffnen",
+          detail_1: "API-Genehmigungsdokument",
+          detail_2: "ACEA-Zertifizierungsdokument",
+          detail_3: "Mercedes-Benz MB-Freigabe 229.52",
+          detail_4: "Volkswagen VW 504.00 / 507.00",
+          detail_5: "Porsche A40 Genehmigung",
+          detail_6: "SAE 0W-20 \u2014 Technisches Datenblatt",
+          detail_7: "SAE 5W-30 \u2014 Technisches Datenblatt",
+          detail_8: "SAE 5W-40 \u2014 Technisches Datenblatt",
+          detail_9: "SAE 5W-30 Diesel \u2014 Technisches Datenblatt",
+          detail_10: "SAE 10W-40 \u2014 Technisches Datenblatt",
+          detail_11: "SAE 10W-30 \u2014 Technisches Datenblatt",
+        }
+      };
+
+      let currentLang = localStorage.getItem('vektron_lang') || 'en';
+      let currentCertId = null;
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('vektron_lang', lang);
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+          const key = el.getAttribute('data-i18n-ph');
+          if (translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+          }
+        });
+
+        // Re-translate the detail title if a PDF is open
+        if (currentCertId && translations[lang]['detail_' + currentCertId]) {
+          detailTitle.innerText = translations[lang]['detail_' + currentCertId];
+        }
+
+        showToast(translations[lang].toast_lang_switch, 2500);
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      });
+
+      // Apply saved language on load
+      setLanguage(currentLang);
+
+      // ============================================
       // PARTICLES GENERATION
       // ============================================
       (function createParticles() {
         const container = document.getElementById('particles');
         if (!container) return;
-        const count = 30;
-        for (let i = 0; i < count; i++) {
+        for (let i = 0; i < 30; i++) {
           const p = document.createElement('div');
           p.classList.add('particle');
           p.style.left = Math.random() * 100 + '%';
@@ -385,11 +605,7 @@
       // ============================================
       const headerMain = document.getElementById('headerMain');
       window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-          headerMain.classList.add('scrolled');
-        } else {
-          headerMain.classList.remove('scrolled');
-        }
+        headerMain.classList.toggle('scrolled', window.scrollY > 50);
       });
 
       // ============================================
@@ -403,7 +619,6 @@
           }
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
       revealElements.forEach(el => revealObserver.observe(el));
 
       // ============================================
@@ -423,16 +638,19 @@
       document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
           nav.classList.remove('active');
-          const icon = mobileMenuBtn.querySelector('i');
-          icon.classList.add('fa-bars');
-          icon.classList.remove('fa-times');
+          if (mobileMenuBtn) {
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+          }
         });
       });
 
       // ============================================
       // TOAST NOTIFICATION
       // ============================================
-      function showToast(message) {
+      function showToast(message, duration) {
+        duration = duration || 3500;
         const existing = document.querySelector('.toast');
         if (existing) existing.remove();
 
@@ -445,78 +663,82 @@
         document.body.appendChild(toast);
 
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            toast.classList.add('show');
-          });
+          requestAnimationFrame(() => toast.classList.add('show'));
         });
 
         setTimeout(() => {
           toast.classList.remove('show');
           setTimeout(() => toast.remove(), 400);
-        }, 3500);
+        }, duration);
+      }
+
+      // ============================================
+      // NEWSLETTER (footer)
+      // ============================================
+      function handleNewsletterSubmit() {
+        const input = document.querySelector('.footer-widget .form-group input');
+        if (input && input.value.trim()) {
+          showToast(translations[currentLang].toast_subscribed);
+          input.value = '';
+        }
       }
 
       // ============================================
       // CERTIFICATE DATA
       // ============================================
       const certificates = {
-        // --- General Certifications ---
         1: {
-          title: "API Approval Document",
+          title: translations.en.detail_1,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/1PDF.pdf",
           type: "pdf",
         },
         2: {
-          title: "ACEA Certification Document",
+          title: translations.en.detail_2,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/2PDF.pdf",
           type: "pdf",
         },
         3: {
-          title: "Mercedes-Benz MB-Approval 229.52",
+          title: translations.en.detail_3,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/3PDF.pdf",
           type: "pdf",
         },
         4: {
-          title: "Volkswagen VW 504.00 / 507.00",
+          title: translations.en.detail_4,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/4PDF.pdf",
           type: "pdf",
         },
         5: {
-          title: "Porsche A40 Approval",
+          title: translations.en.detail_5,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/5PDF.pdf",
           type: "pdf",
         },
-
-        // --- Product TDS Documents ---
-        // IMPORTANT: Replace the "imageLink" URLs below with your actual TDS PDF file paths.
-        // Change "type" from "image" to "pdf" once you have the real PDF files ready.
         6: {
-          title: "SAE 0W-20 — Technical Data Sheet",
+          title: translations.en.detail_6,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-0W-20-TDS.pdf",
           type: "pdf",
         },
         7: {
-          title: "SAE 5W-30 — Technical Data Sheet",
+          title: translations.en.detail_7,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-SAE-5W-30-C3.pdf",
           type: "pdf",
         },
         8: {
-          title: "SAE 5W-40 — Technical Data Sheet",
+          title: translations.en.detail_8,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-SAE-5W-40-C3.pdf",
           type: "pdf",
         },
         9: {
-          title: "SAE 5W-30 Diesel — Technical Data Sheet",
+          title: translations.en.detail_9,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-DIESEL-SAE-5W-30-CK-4.pdf",
           type: "pdf",
         },
         10: {
-          title: "SAE 10W-40 — Technical Data Sheet",
+          title: translations.en.detail_10,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VEKTRON-10W40-LPG-TDS.pdf",
           type: "pdf",
         },
         11: {
-          title: "SAE 10W-30 — Technical Data Sheet",
+          title: translations.en.detail_11,
           imageLink: "https://vektronlubricantsofficial.vercel.app/image/VVEKTRON-10W40-LPG-TDS.pdf",
           type: "pdf",
         },
@@ -531,10 +753,11 @@
       // PDF RENDERING (MOBILE)
       // ============================================
       async function renderPdfMobile(url) {
+        const loadingText = translations[currentLang].pdf_loading;
         displayArea.innerHTML = `
           <div class="pdf-loading">
             <div class="spinner"></div>
-            <span>Loading document...</span>
+            <span>${loadingText}</span>
           </div>
         `;
 
@@ -566,11 +789,13 @@
           displayArea.appendChild(container);
         } catch (error) {
           console.error("Error loading PDF:", error);
+          const errTitle = translations[currentLang].pdf_error_title;
+          const errLink = translations[currentLang].pdf_error_link;
           displayArea.innerHTML = `
             <div class="pdf-loading">
               <i class="fas fa-exclamation-triangle" style="font-size:2rem;color:var(--yellow-bright);"></i>
-              <span>Could not load PDF viewer on this device.</span>
-              <a href="${url}" target="_blank" style="color:var(--yellow-bright);text-decoration:underline;font-size:0.85rem;margin-top:8px;">Open PDF in new window <i class="fas fa-external-link-alt" style="font-size:0.75rem;"></i></a>
+              <span>${errTitle}</span>
+              <a href="${url}" target="_blank" style="color:var(--yellow-bright);text-decoration:underline;font-size:0.85rem;margin-top:8px;">${errLink} <i class="fas fa-external-link-alt" style="font-size:0.75rem;"></i></a>
             </div>
           `;
         }
@@ -583,7 +808,8 @@
         const data = certificates[id];
         if (!data) return;
 
-        detailTitle.innerText = data.title;
+        currentCertId = id;
+        detailTitle.innerText = translations[currentLang]['detail_' + id] || data.title;
         displayArea.innerHTML = "";
 
         galleryView.style.display = "none";
@@ -596,10 +822,11 @@
           if (isMobile) {
             renderPdfMobile(data.imageLink);
           } else {
+            const loadingText = translations[currentLang].pdf_loading;
             displayArea.innerHTML = `
               <div class="pdf-loading" id="pdfDesktopLoading">
                 <div class="spinner"></div>
-                <span>Loading document...</span>
+                <span>${loadingText}</span>
               </div>
               <iframe
                 src="${data.imageLink}#toolbar=1&navpanes=1"
@@ -618,6 +845,7 @@
       }
 
       function closeCertificate() {
+        currentCertId = null;
         detailView.style.display = "none";
         galleryView.style.display = "block";
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -629,13 +857,11 @@
 
       // ============================================
       // AUTO-OPEN FROM URL PARAMETER
-      // When coming from the product page via ?cert=X
       // ============================================
       window.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams(window.location.search);
         const certId = params.get('cert');
         if (certId) {
-          // Small delay to ensure the page is fully rendered
           setTimeout(() => {
             openCertificate(parseInt(certId));
           }, 300);
