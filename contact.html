@@ -9,6 +9,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/contact.css">
+
+    <style>
+      /* ========== LANGUAGE TOGGLE ========== */
+      .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid rgba(245, 197, 24, 0.2);
+        flex-shrink: 0;
+        margin-left: 4px;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted, #5a5a72);
+        padding: 5px 10px;
+        font-size: 0.68rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: var(--font-body, 'Roboto', sans-serif);
+        letter-spacing: 0.5px;
+      }
+
+      .lang-btn.active {
+        background: rgba(245, 197, 24, 0.15);
+        color: var(--yellow-bright, #f5c518);
+        text-shadow: 0 0 8px rgba(245, 197, 24, 0.3);
+      }
+
+      .lang-btn:hover:not(.active) {
+        color: var(--text-secondary, #9a9ab0);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .lang-divider {
+        width: 1px;
+        height: 16px;
+        background: rgba(245, 197, 24, 0.15);
+      }
+    </style>
 </head>
 <body>
     <!-- ===== PARTICLES ===== -->
@@ -28,6 +72,12 @@
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+                        <div class="lang-toggle">
+                            <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                            <div class="lang-divider"></div>
+                            <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,12 +95,12 @@
                     </button>
                     <nav>
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="product.html">Products</a></li>
-                            <li><a href="quality.html">Quality Certificates</a></li>
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="crg.html">Complaints</a></li>
-                            <li><a href="contact.html" class="active">Contact Us</a></li>
+                            <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                            <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+                            <li><a href="quality.html" data-i18n="nav_quality">Quality Certificates</a></li>
+                            <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+                            <li><a href="crg.html" data-i18n="nav_complaints">Complaints</a></li>
+                            <li><a href="contact.html" class="active" data-i18n="nav_contact">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -61,8 +111,8 @@
     <!-- ===== PAGE BANNER ===== -->
     <div class="page-banner">
         <div class="container">
-            <h1>Get In <span>Touch</span></h1>
-            <p>We'd love to hear from you — reach out anytime</p>
+            <h1><span data-i18n="banner_get">Get In</span> <span data-i18n="banner_touch">Touch</span></h1>
+            <p data-i18n="banner_subtitle">We'd love to hear from you — reach out anytime</p>
         </div>
     </div>
 
@@ -70,8 +120,8 @@
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-title reveal">
-                <h2>Contact Us</h2>
-                <p>Have questions or need a quote? Fill out the form or use the details below</p>
+                <h2 data-i18n="page_title">Contact Us</h2>
+                <p data-i18n="page_subtitle">Have questions or need a quote? Fill out the form or use the details below</p>
             </div>
 
             <div class="contact-layout">
@@ -82,42 +132,42 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="contact-item-text">
-                            <h3>Head Office</h3>
-                            <p>ROWE MINERALÖLWERK GMBH<br>Borkensteiner Mühle 7<br>67308 Bubenheim, Germany</p>
+                            <h3 data-i18n="info_office">Head Office</h3>
+                            <p data-i18n="info_address">ROWE MINERALÖLWERK GMBH<br>Borkensteiner Mühle 7<br>67308 Bubenheim, Germany</p>
                         </div>
                     </div>
 
-                    <div class="contact-item reveal reveal-delay-2">
+                    <div class="contact-item reveal-delay-2">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="contact-item-text">
-                            <h3>Phone</h3>
-                            <p><a href="tel:+49635595410">+49 6355 9541 0</a></p>
-                            <h3>Fax</h3>
-                            <p><a href="tel:+496455954141">+49 6455 9541 41</a></p>
+                            <h3 data-i18n="info_phone">Phone</h3>
+                            <p><a href="tel:+49635595410" data-i18n="info_phone_num">+49 6355 9541 0</a></p>
+                            <h3 data-i18n="info_fax">Fax</h3>
+                            <p><a href="tel:+496455954141" data-i18n="info_fax_num">+49 6455 9541 41</a></p>
                         </div>
                     </div>
 
-                    <div class="contact-item reveal reveal-delay-3">
+                    <div class="contact-item reveal-delay-3">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="contact-item-text">
-                            <h3>Email</h3>
-                            <p><a href="mailto:vektronlubricants@hotmail.com">vektronlubricants@hotmail.com</a></p>
+                            <h3 data-i18n="info_email">Email</h3>
+                            <p><a href="mailto:vektronlubricants@hotmail.com" data-i18n="info_email_addr">vektronlubricants@hotmail.com</a></p>
                         </div>
                     </div>
 
-                    <div class="contact-item reveal reveal-delay-4">
+                    <div class="contact-item reveal-delay-4">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <div class="contact-item-text">
-                            <h3>Business Hours</h3>
-                            <p>Monday – Friday: 8:00 AM – 6:00 PM</p>
-                            <p>Saturday: 7:00 AM – 5:00 PM</p>
-                            <p>Sunday: Closed</p>
+                            <h3 data-i18n="info_hours">Business Hours</h3>
+                            <p data-i18n="hours_weekday">Monday – Friday: 8:00 AM – 6:00 PM</p>
+                            <p data-i18n="hours_saturday">Saturday: 7:00 AM – 5:00 PM</p>
+                            <p data-i18n="hours_sunday">Sunday: Closed</p>
                         </div>
                     </div>
                 </div>
@@ -125,31 +175,31 @@
                 <!-- Right: Contact Form -->
                 <div class="contact-form-wrapper reveal">
                     <div class="form-header">
-                        <h3>Send a Message</h3>
-                        <p>Fill in the details below and we'll respond promptly</p>
+                        <h3 data-i18n="form_title">Send a Message</h3>
+                        <p data-i18n="form_subtitle">Fill in the details below and we'll respond promptly</p>
                     </div>
                     <form id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="name">Your Name</label>
-                                <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                <label for="name" data-i18n="label_name">Your Name</label>
+                                <input type="text" id="name" name="name" data-i18n-ph="ph_name" placeholder="John Doe" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Your Email</label>
-                                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                                <label for="email" data-i18n="label_email">Your Email</label>
+                                <input type="email" id="email" name="email" data-i18n-ph="ph_email" placeholder="john@company.com" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" placeholder="How can we help?" required>
+                            <label for="subject" data-i18n="label_subject">Subject</label>
+                            <input type="text" id="subject" name="subject" data-i18n="ph_subject" placeholder="How can we help?" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell us more about your inquiry..." required></textarea>
+                            <label for="message" data-i18n="label_message">Message</label>
+                            <textarea id="message" name="message" data-i18n="ph_message" placeholder="Tell us more about your inquiry..." required></textarea>
                         </div>
                         <div class="form-submit">
                             <button type="submit" class="btn">
-                                <i class="fas fa-paper-plane"></i> Send Message
+                                <i class="fas fa-paper-plane"></i> <span data-i18n="btn_send">Send Message</span>
                             </button>
                         </div>
                     </form>
@@ -163,7 +213,7 @@
         <div class="container">
             <div class="map-container reveal">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.8!2d7.89!3d49.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDM3JzQ4LjAiTiA3wrA1MycyNC4wIkU!5e0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.8!2d7.89!3d49.63!2m3!1f0!2f0!3m2!1sen!2sde!4v1700000000000!5m2!1sen!2sde"
                     allowfullscreen=""
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
@@ -174,8 +224,8 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <div class="map-badge-text">
-                        <h4>Our Location</h4>
-                        <p>Bubenheim, Germany</p>
+                        <h4 data-i18n="map_location">Our Location</h4>
+                        <p data-i18n="map_city">Bubenheim, Germany</p>
                     </div>
                 </div>
             </div>
@@ -187,8 +237,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-widget">
-                    <h3>Vektron Lubricants</h3>
-                    <p>Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.</p>
+                    <h3 data-i18n="footer_about">Vektron Lubricants</h3>
+                    <p data-i18n="footer_about_text">Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -197,44 +247,180 @@
                     </div>
                 </div>
                 <div class="footer-widget">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer_quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="product.html">Products</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="crg.html">Complaints Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+                        <li><a href="crg.html" data-i18n="footer_complaints">Complaints Registration</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
-                    <h3>Services</h3>
+                    <h3 data-i18n="nav_services">Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Petroleum Distribution</a></li>
-                        <li><a href="#">Fuel Supply</a></li>
-                        <li><a href="#">Storage Solutions</a></li>
-                        <li><a href="#">Transportation</a></li>
-                        <li><a href="#">Equipment Services</a></li>
+                        <li><a href="#" data-i18n="srv1_title">Petroleum Distribution</a></li>
+                        <li><a href="#" data-i18n="srv2_title">Fuel Supply</a></li>
+                        <li><a href="#" data-i18n="srv3_title">Storage Solutions</a></li>
+                        <li><a href="#" data-i18n="srv4_title">Transportation</a></li>
+                        <li><a href="#" data-i18n="srv5_title">Equipment Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <h3 data-i18n="footer_newsletter">Newsletter</h3>
+                    <p data-i18n="footer_newsletter_text">Subscribe to our newsletter for the latest updates and offers.</p>
                     <form id="newsletterForm">
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email Address" required>
+                            <input type="email" data-i18n-ph="ph_email" placeholder="Your Email Address" required>
                         </div>
-                        <button type="submit" class="btn">Subscribe</button>
+                        <button type="submit" class="btn" data-i18n="btn_subscribe">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Vektron Lubricants. All Rights Reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 2025 Vektron Lubricants. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
-      // ========== PARTICLES ==========
+      // ============================================
+      // TRANSLATION SYSTEM
+      // ============================================
+      const translations = {
+        en: {
+          nav_home: "Home",
+          nav_products: "Products",
+          nav_quality: "Quality Certificates",
+          nav_services: "Services",
+          nav_complaints: "Complaints",
+          nav_contact: "Contact",
+          banner_get: "Get In",
+          banner_touch: "Touch",
+          banner_subtitle: "We'd love to hear from you — reach out anytime",
+          page_title: "Contact Us",
+          page_subtitle: "Have questions or need a quote? Fill out the form or use the details below",
+          info_office: "Head Office",
+          info_address: "ROWE MINERALÖLWERK GMBH<br>Borkensteiner Mühle 7<br>67308 Bubenheim, Germany",
+          info_phone: "Phone",
+          info_phone_num: "+49 6355 9541 0",
+          info_fax: "Fax",
+          info_fax_num: "+49 6455 9541 41",
+          info_email: "Email",
+          info_email_addr: "vektronlubricants@hotmail.com",
+          info_hours: "Business Hours",
+          hours_weekday: "Monday – Friday: 8:00 AM – 6:00 PM",
+          hours_saturday: "Saturday: 7: 00 AM – 5: 00 PM",
+          hours_sunday: "Sunday: Closed",
+          label_name: "Your Name",
+          label_email: "Your Email",
+          label_subject: "Subject",
+          label_message: "Message",
+          ph_name: "John Doe",
+          ph_email: "john@company.com",
+          ph_subject: "How can we help?",
+          ph_message: "Tell us more about your inquiry...",
+          btn_send: "Send Message",
+          btn_subscribe: "Subscribe",
+          footer_about: "Vektron Lubricants",
+          footer_about_text: "Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.",
+          footer_quick_links: "Quick Links",
+          footer_complaints: "Complaints Registration",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Subscribe to our newsletter for the latest updates and offers.",
+          footer_copyright: "\u00A9 2025 Vektron Lubricants. All Rights Reserved.",
+          ph_email: "Your Email Address",
+          toast_contact_success: "<i class=\"fas fa-check-circle\" style=\"color:var(--yellow-bright);margin-right:8px;\"></i> Thank you, {name}! Your message has been received. We'll respond to {email} shortly.",
+          toast_subscribed: "Subscribed successfully!",
+          toast_lang_switch: "Language changed to English",
+        },
+
+        de: {
+          nav_home: "Startseite",
+          nav_products: "Produkte",
+          nav_quality: "Qualit\u00E4tszertifikate",
+          nav_services: "Dienstleistungen",
+          nav_complaints: "Beschwerden",
+          nav_contact: "Kontakt",
+          banner_get: "Kontakt",
+          banner_touch: "aufnehmen",
+          banner_subtitle: "Wir freuen uns von Ihnen zu h\u00F6ren — erreichen Sie uns jederzeit",
+          page_title: "Kontakt",
+          page_subtitle: "Haben Sie Fragen oder ben\u00F6tigen Sie ein Angebot? F\u00FCllen Sie das Formular aus oder nutzen Sie die untenstehenden Details",
+          info_office: "Hauptniederlassung",
+          info_address: "ROWE MINERAL\u00D6LWERK GMBH<br>Borkensteiner M\u00FChle 7<br>67308 Bubenheim, Deutschland",
+          info_phone: "Telefon",
+          info_phone_num: "+49 6355 9541 0",
+          info_fax: "Fax",
+          info_fax_num: "+49 6455 9541 41",
+          info_email: "E-Mail",
+          info_email_addr: "vektronlubricants@hotmail.com",
+          info_hours: "Gesch\u00E4ffnungszeiten",
+          hours_weekday: "Montag – Freitag: 8:00 – 18:00 Uhr",
+          hours_saturday: "Samstag: 7:00 – 17:00 Uhr",
+          hours_sunday: "Geschlossen",
+          label_name: "Ihr Name",
+          label_email: "Ihre E-Mail",
+          label_subject: "Betreff",
+          label_message: "Erz\u00E4hlen Sie uns mehr \u00FCber Ihre Anfrage...",
+          ph_name: "Max Mustermann",
+          ph_email: "max@firma.de",
+          ph_subject: "Wie k\u00F6nnen wir helfen?",
+          ph_message: "Erz\u00E4hlen Sie uns mehr \u00FCber Ihre Anfrage...",
+          btn_send: "Nachricht senden",
+          btn_subscribe: "Abonnieren",
+          footer_about: "Vektron Lubricants",
+          footer_about_text: "Vektron Lubricants ist ein f\u00FChrender Anbieter von Erd\u00F6lprodukten und industriellen L\u00F6sungen, der Unternehmen in verschiedenen Branchen mit Exzellenz und Zuverl\u00E4ssigkeit bedient.",
+          footer_quick_links: "Schnelllinks",
+          footer_complaints: "Beschwerderegistrierung",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Abonnieren Sie unseren Newsletter f\u00FCr die neuesten Updates und Angebote.",
+          footer_copyright: "\u00A9 2025 Vektron Lubricants. Alle Rechte vorbehalten.",
+          ph_email: "Ihre E-Mail-Adresse",
+          toast_contact_success: "<i class=\"fas fa-check-circle\" style=\"color:var(--yellow-bright);margin-right:8px;\"></i> Vielen Dank, {name}! Ihre Nachricht wurde empfangen. Wir antworten Ihnen unter {email} kurzfr.",
+          toast_subscribed: "Erfolgreich abonniert!",
+          toast_lang_switch: "Sprache auf Deutsch umgestellt",
+        }
+      };
+
+      let currentLang = localStorage.getItem('vektron_lang') || 'en';
+
+      function setLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem('vektron_lang', lang);
+        document.documentElement.lang = lang;
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[lang][key]) {
+            el.textContent = translations[lang][key];
+          }
+        });
+
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+          const key = el.getAttribute('data-i18n-ph');
+          if (translations[lang][key]) {
+            el.placeholder = translations[lang][key];
+          }
+        });
+
+        showToast(translations[lang].toast_lang_switch, 2500);
+      }
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+      });
+
+      setLanguage(currentLang);
+
+      // ============================================
+      // PARTICLES
+      // ============================================
       (function createParticles() {
         const container = document.getElementById('particles');
         if (!container) return;
@@ -249,31 +435,38 @@
         }
       })();
 
-      // ========== HEADER SCROLL ==========
+      // ============================================
+      // HEADER SCROLL
+      // ============================================
       const headerMain = document.getElementById('headerMain');
       window.addEventListener('scroll', () => {
         headerMain.classList.toggle('scrolled', window.scrollY > 50);
       });
 
-      // ========== SCROLL REVEAL ==========
-      const revealElements = document.querySelectorAll('.reveal');
+      // ============================================
+      // SCROLL REVEAL
+      // ============================================
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) entry.target.classList.add('visible');
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-      revealElements.forEach(el => revealObserver.observe(el));
+      document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-      // ========== MOBILE MENU ==========
+      // ============================================
+      // MOBILE MENU
+      // ============================================
       const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
       const nav = document.querySelector('nav');
 
-      mobileMenuBtn.addEventListener('click', () => {
-        nav.classList.toggle('active');
-        const icon = mobileMenuBtn.querySelector('i');
-        icon.classList.toggle('fa-bars');
-        icon.classList.toggle('fa-times');
-      });
+      if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.toggle('fa-bars');
+          icon.classList.toggle('fa-times');
+        });
+      }
 
       document.querySelectorAll('nav ul li a').forEach(link => {
         link.addEventListener('click', () => {
@@ -284,8 +477,11 @@
         });
       });
 
-      // ========== TOAST ==========
-      function showToast(message) {
+      // ============================================
+      // TOAST
+      // ============================================
+      function showToast(message, duration) {
+        duration = duration || 4000;
         const existing = document.querySelector('.toast');
         if (existing) existing.remove();
 
@@ -304,10 +500,12 @@
         setTimeout(() => {
           toast.classList.remove('show');
           setTimeout(() => toast.remove(), 400);
-        }, 4000);
+        }, duration);
       }
 
-      // ========== CONTACT FORM ==========
+      // ============================================
+      // CONTACT FORM
+      // ============================================
       const contactForm = document.getElementById('contactForm');
       contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -320,11 +518,17 @@
           return;
         }
 
-        showToast(`<i class="fas fa-check-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Thank you, ${name}! Your message has been received. We'll respond to ${email} shortly.`);
+        const msg = translations[currentLang].toast_contact_success
+          .replace('{name}', name)
+          .replace('{email}', email);
+
+        showToast(msg);
         contactForm.reset();
       });
 
-      // ========== NEWSLETTER FORM ==========
+      // ============================================
+      // NEWSLETTER
+      // ============================================
       const newsletterForm = document.getElementById('newsletterForm');
       newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -336,7 +540,7 @@
           return;
         }
 
-        showToast(`<i class="fas fa-check-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Subscribed successfully with ${email}!`);
+        showToast(translations[currentLang].toast_subscribed);
         newsletterForm.reset();
       });
     </script>
