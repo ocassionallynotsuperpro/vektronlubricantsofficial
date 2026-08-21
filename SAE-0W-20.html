@@ -52,6 +52,16 @@
         height: 16px;
         background: rgba(245, 197, 24, 0.15);
       }
+
+      /* ========== TRANSLATION FADE ========== */
+      [data-i18n],
+      [data-i18n-ph] {
+        transition: opacity 0.25s ease;
+      }
+      [data-i18n].lang-switching,
+      [data-i18n-ph].lang-switching {
+        opacity: 0;
+      }
     </style>
 </head>
 <body>
@@ -112,11 +122,11 @@
     <div class="breadcrumb">
         <div class="container">
             <div class="breadcrumb-inner">
-                <a href="index.html">Home</a>
+                <a href="index.html" data-i18n="breadcrumb_home">Home</a>
                 <span class="sep"><i class="fas fa-chevron-right"></i></span>
-                <a href="product.html">Products</a>
+                <a href="product.html" data-i18n="breadcrumb_products">Products</a>
                 <span class="sep"><i class="fas fa-chevron-right"></i></span>
-                <span class="current">SAE 0W-20</span>
+                <span class="current" data-i18n="breadcrumb_current">SAE 0W-20</span>
             </div>
         </div>
     </div>
@@ -124,8 +134,8 @@
     <!-- ===== PAGE BANNER ===== -->
     <div class="page-banner">
         <div class="container">
-            <h1>SAE <span>0W-20</span></h1>
-            <p class="product-subtitle">Vektron Premium Fully Synthetic Engine Oil</p>
+            <h1 data-i18n-html="banner_title">SAE <span>0W-20</span></h1>
+            <p class="product-subtitle" data-i18n="banner_subtitle">Vektron Premium Fully Synthetic Engine Oil</p>
         </div>
     </div>
 
@@ -138,8 +148,8 @@
                 <div class="product-info">
 
                     <div class="product-description reveal">
-                        <p>VEKTRON LUBRICANT PREMIUM API SP 0W-20 is a Fully Synthetic engine oil formulated with synthetic base oil and the latest additive package to meet advanced technology and highest quality specifications for the latest generation of cars. API SP 0W-20 meets the highest emission norms and fuel saving standards, extends engine life through reduced sulphur content and helps prevent low-speed pre-ignition (LSPI).</p>
-                        <p style="margin-top: 14px;">It is an advanced Fully Synthetic engine oil designed for fuel economy, low viscosity, low carbon emission engines in Hybrid Electric Vehicles (HEV), Plug-in Hybrid Electric Vehicles (PHEV) turbocharged or naturally aspirated, direct or indirect injection for which the use of these SAE grades of motor oil has been prescribed by the OEM.</p>
+                        <p data-i18n="desc_para1">VEKTRON LUBRICANT PREMIUM API SP 0W-20 is a Fully Synthetic engine oil formulated with synthetic base oil and the latest additive package to meet advanced technology and highest quality specifications for the latest generation of cars. API SP 0W-20 meets the highest emission norms and fuel saving standards, extends engine life through reduced sulphur content and helps prevent low-speed pre-ignition (LSPI).</p>
+                        <p style="margin-top: 14px;" data-i18n="desc_para2">It is an advanced Fully Synthetic engine oil designed for fuel economy, low viscosity, low carbon emission engines in Hybrid Electric Vehicles (HEV), Plug-in Hybrid Electric Vehicles (PHEV) turbocharged or naturally aspirated, direct or indirect injection for which the use of these SAE grades of motor oil has been prescribed by the OEM.</p>
                     </div>
 
                     <!-- Performance Standards -->
@@ -172,19 +182,19 @@
                         <div class="feature-items">
                             <div class="feature-item">
                                 <div class="fi-icon"><i class="fas fa-gas-pump"></i></div>
-                                <span class="fi-text">Boosts fuel efficiency</span>
+                                <span class="fi-text" data-i18n="fi_fuel">Boosts fuel efficiency</span>
                             </div>
                             <div class="feature-item">
                                 <div class="fi-icon"><i class="fas fa-snowflake"></i></div>
-                                <span class="fi-text">Ensures smooth cold starts</span>
+                                <span class="fi-text" data-i18n="fi_cold">Ensures smooth cold starts</span>
                             </div>
                             <div class="feature-item">
                                 <div class="fi-icon"><i class="fas fa-shield-alt"></i></div>
-                                <span class="fi-text">Reduces engine wear</span>
+                                <span class="fi-text" data-i18n="fi_wear">Reduces engine wear</span>
                             </div>
                             <div class="feature-item">
                                 <div class="fi-icon"><i class="fas fa-broom"></i></div>
-                                <span class="fi-text">Prevents sludge & deposits</span>
+                                <span class="fi-text" data-i18n="fi_sludge">Prevents sludge & deposits</span>
                             </div>
                         </div>
                     </div>
@@ -219,10 +229,10 @@
 
                     <!-- Actions -->
                     <div class="product-actions reveal-delay-4">
-                        <a href="product.html" class="btn">
+                        <a href="product.html" class="btn" data-i18n="action_all_products">
                             <i class="fas fa-arrow-left"></i> All Products
                         </a>
-                        <a href="contact.html" class="btn-ghost btn">
+                        <a href="contact.html" class="btn-ghost btn" data-i18n="action_ask_question">
                             <i class="fas fa-question-circle"></i> Ask a Question
                         </a>
                     </div>
@@ -236,19 +246,19 @@
 
                         <div class="product-quick-specs">
                             <div class="quick-spec">
-                                <div class="qs-label">Grade</div>
+                                <div class="qs-label" data-i18n="qs_grade_label">Grade</div>
                                 <div class="qs-value">0W-20</div>
                             </div>
                             <div class="quick-spec">
-                                <div class="qs-label">Type</div>
-                                <div class="qs-value">Full Synth</div>
+                                <div class="qs-label" data-i18n="qs_type_label">Type</div>
+                                <div class="qs-value" data-i18n="qs_type_value">Full Synth</div>
                             </div>
                             <div class="quick-spec">
-                                <div class="qs-label">Standard</div>
+                                <div class="qs-label" data-i18n="qs_std_label">Standard</div>
                                 <div class="qs-value">API SP</div>
                             </div>
                             <div class="quick-spec">
-                                <div class="qs-label">Emission</div>
+                                <div class="qs-label" data-i18n="qs_emi_label">Emission</div>
                                 <div class="qs-value">GF-6A</div>
                             </div>
                         </div>
@@ -311,6 +321,152 @@
     </footer>
 
     <script>
+      // ============================================
+      // TRANSLATIONS
+      // ============================================
+      const translations = {
+        en: {
+          nav_home: "Home",
+          nav_products: "Products",
+          nav_quality: "Quality Certificates",
+          nav_services: "Services",
+          nav_complaints: "Complaints",
+          nav_contact: "Contact",
+          breadcrumb_home: "Home",
+          breadcrumb_products: "Products",
+          breadcrumb_current: "SAE 0W-20",
+          banner_title: 'SAE <span>0W-20</span>',
+          banner_subtitle: "Vektron Premium Fully Synthetic Engine Oil",
+          desc_para1: "VEKTRON LUBRICANT PREMIUM API SP 0W-20 is a Fully Synthetic engine oil formulated with synthetic base oil and the latest additive package to meet advanced technology and highest quality specifications for the latest generation of cars. API SP 0W-20 meets the highest emission norms and fuel saving standards, extends engine life through reduced sulphur content and helps prevent low-speed pre-ignition (LSPI).",
+          desc_para2: "It is an advanced Fully Synthetic engine oil designed for fuel economy, low viscosity, low carbon emission engines in Hybrid Electric Vehicles (HEV), Plug-in Hybrid Electric Vehicles (PHEV) turbocharged or naturally aspirated, direct or indirect injection for which the use of these SAE grades of motor oil has been prescribed by the OEM.",
+          section_standards: "Performance Standards",
+          section_features: "Features & Benefits",
+          fi_fuel: "Boosts fuel efficiency",
+          fi_cold: "Ensures smooth cold starts",
+          fi_wear: "Reduces engine wear",
+          fi_sludge: "Prevents sludge & deposits",
+          section_recommended: "Recommended For",
+          action_all_products: '<i class="fas fa-arrow-left"></i> All Products',
+          action_ask_question: '<i class="fas fa-question-circle"></i> Ask a Question',
+          qs_grade_label: "Grade",
+          qs_type_label: "Type",
+          qs_type_value: "Full Synth",
+          qs_std_label: "Standard",
+          qs_emi_label: "Emission",
+          footer_about: "Vektron Lubricants",
+          footer_about_text: "Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.",
+          footer_quick_links: "Quick Links",
+          footer_complaints: "Complaints Registration",
+          srv1_title: "Petroleum Distribution",
+          srv2_title: "Fuel Supply",
+          srv3_title: "Storage Solutions",
+          srv4_title: "Transportation",
+          srv5_title: "Equipment Services",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Subscribe to our newsletter for the latest updates and offers.",
+          ph_email: "Your Email Address",
+          btn_subscribe: "Subscribe",
+          footer_copyright: "\u00A9 2025 Vektron Lubricants. All Rights Reserved."
+        },
+        de: {
+          nav_home: "Startseite",
+          nav_products: "Produkte",
+          nav_quality: "Qualit\u00E4tszertifikate",
+          nav_services: "Dienstleistungen",
+          nav_complaints: "Beschwerden",
+          nav_contact: "Kontakt",
+          breadcrumb_home: "Startseite",
+          breadcrumb_products: "Produkte",
+          breadcrumb_current: "SAE 0W-20",
+          banner_title: 'SAE <span>0W-20</span>',
+          banner_subtitle: "Vektron Premium Vollsynthetisches Motor\u00F6l",
+          desc_para1: "VEKTRON LUBRICANT PREMIUM API SP 0W-20 ist ein vollsynthetisches Motor\u00F6l, das auf Basis von synthetischen Grund\u00F6len und dem neuesten Additivpaket formuliert wurde, um den fortschrittlichsten Technologien und h\u00F6chsten Qualit\u00E4tsspezifikationen der neuesten Fahrzeuggeneration gerecht zu werden. API SP 0W-20 erf\u00FCllt die strengsten Emissionsnormen und Kraftstoffeinsparstandards, verl\u00E4ngert die Motorlebensdauer durch reduzierten Schwefelgehalt und hilft, Vorentz\u00FCndungen bei niedrigen Drehzahlen (LSPI) zu vermeiden.",
+          desc_para2: "Es ist ein fortschrittliches vollsynthetisches Motor\u00F6l, das f\u00FCr Kraftstoffeffizienz, niedrige Viskosit\u00E4t und Motoren mit niedrigen Kohlenstoffemissionen in Hybrid-Elektrofahrzeugen (HEV), Plug-in-Hybrid-Elektrofahrzeugen (PHEV), aufgeladenen oder saugenden Motoren mit Direkt- oder Indirekteinspritzung entwickelt wurde, f\u00FCr die der OEM die Verwendung dieser SAE-Viskosit\u00E4tsklassen vorschreibt.",
+          section_standards: "Leistungsstandards",
+          section_features: "Eigenschaften & Vorteile",
+          fi_fuel: "Verbessert die Kraftstoffeffizienz",
+          fi_cold: "Gew\u00E4hrleistet reibungslose Kaltstarts",
+          fi_wear: "Reduziert den Motorenverschlei\u00DF",
+          fi_sludge: "Verhindert Schlamm & Ablagerungen",
+          section_recommended: "Empfohlen f\u00FCr",
+          action_all_products: '<i class="fas fa-arrow-left"></i> Alle Produkte',
+          action_ask_question: '<i class="fas fa-question-circle"></i> Eine Frage stellen',
+          qs_grade_label: "Viskosit\u00E4t",
+          qs_type_label: "Typ",
+          qs_type_value: "Vollsynth.",
+          qs_std_label: "Norm",
+          qs_emi_label: "Emission",
+          footer_about: "Vektron Schmierstoffe",
+          footer_about_text: "Vektron Schmierstoffe ist ein f\u00FChrender Anbieter von Erd\u00F6lprodukten und industriellen L\u00F6sungen, der Unternehmen in verschiedenen Branchen mit Exzellenz und Zuverl\u00E4ssigkeit bedient.",
+          footer_quick_links: "Schnelllinks",
+          footer_complaints: "Beschwerderegistrierung",
+          srv1_title: "Erd\u00F6lverteilung",
+          srv2_title: "Kraftstoffversorgung",
+          srv3_title: "Lagerl\u00F6sungen",
+          srv4_title: "Transport",
+          srv5_title: "Ausr\u00FCstungsservice",
+          footer_newsletter: "Newsletter",
+          footer_newsletter_text: "Abonnieren Sie unseren Newsletter f\u00FCr die neuesten Updates und Angebote.",
+          ph_email: "Ihre E-Mail-Adresse",
+          btn_subscribe: "Abonnieren",
+          footer_copyright: "\u00A9 2025 Vektron Schmierstoffe. Alle Rechte vorbehalten."
+        }
+      };
+
+      let currentLang = 'en';
+
+      function applyLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        // Gather all translatable elements
+        const textEls = document.querySelectorAll('[data-i18n]');
+        const htmlEls = document.querySelectorAll('[data-i18n-html]');
+        const phEls = document.querySelectorAll('[data-i18n-ph]');
+        const allEls = [...textEls, ...htmlEls, ...phEls];
+
+        // Add fading class
+        allEls.forEach(el => el.classList.add('lang-switching'));
+
+        // After brief fade-out, swap text and fade back in
+        setTimeout(() => {
+          textEls.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key] !== undefined) el.textContent = t[key];
+          });
+
+          htmlEls.forEach(el => {
+            const key = el.getAttribute('data-i18n-html');
+            if (t[key] !== undefined) el.innerHTML = t[key];
+          });
+
+          phEls.forEach(el => {
+            const key = el.getAttribute('data-i18n-ph');
+            if (t[key] !== undefined) el.placeholder = t[key];
+          });
+
+          // Update document lang
+          document.documentElement.lang = lang;
+
+          // Remove fading class
+          allEls.forEach(el => el.classList.remove('lang-switching'));
+        }, 250);
+      }
+
+      // Language toggle buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const lang = btn.getAttribute('data-lang');
+          if (lang === currentLang) return;
+
+          document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          currentLang = lang;
+          applyLanguage(lang);
+        });
+      });
+
       // ============================================
       // PARTICLES
       // ============================================
@@ -393,10 +549,16 @@
         e.preventDefault();
         const email = newsletterForm.querySelector('input[type="email"]').value.trim();
         if (!email) {
-          showToast('<i class="fas fa-exclamation-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Please enter a valid email address.');
+          const errMsg = currentLang === 'de'
+            ? '<i class="fas fa-exclamation-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Bitte geben Sie eine g\u00FCltige E-Mail-Adresse ein.'
+            : '<i class="fas fa-exclamation-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Please enter a valid email address.';
+          showToast(errMsg);
           return;
         }
-        showToast(`<i class="fas fa-check-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Subscribed successfully with ${email}!`);
+        const successMsg = currentLang === 'de'
+          ? `<i class="fas fa-check-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Erfolgreich abonniert mit ${email}!`
+          : `<i class="fas fa-check-circle" style="color:var(--yellow-bright);margin-right:8px;"></i> Subscribed successfully with ${email}!`;
+        showToast(successMsg);
         newsletterForm.reset();
       });
 
