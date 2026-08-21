@@ -8,6 +8,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="assets/main.css">
+
+    <style>
+      /* ========== LANGUAGE TOGGLE ========== */
+      .lang-toggle {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        border-radius: 6px;
+        overflow: hidden;
+        border: 1px solid rgba(245, 197, 24, 0.2);
+        position: relative;
+        z-index: 1;
+        flex-shrink: 0;
+      }
+
+      .lang-btn {
+        background: transparent;
+        border: none;
+        color: var(--text-muted, #5a5a72);
+        padding: 5px 10px;
+        font-size: 0.68rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-family: var(--font-body, 'Roboto', sans-serif);
+        letter-spacing: 0.5px;
+        position: relative;
+      }
+
+      .lang-btn.active {
+        background: rgba(245, 197, 24, 0.15);
+        color: var(--yellow-bright, #f5c518);
+        text-shadow: 0 0 8px rgba(245, 197, 24, 0.3);
+      }
+
+      .lang-btn:hover:not(.active) {
+        color: var(--text-secondary, #9a9ab0);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .lang-divider {
+        width: 1px;
+        height: 16px;
+        background: rgba(245, 197, 24, 0.15);
+      }
+
+      /* Toast positioning override for this page */
+      #toastContainer {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    </style>
 </head>
 <body>
 
@@ -28,6 +85,13 @@
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
+
+                        <!-- Language Toggle -->
+                        <div class="lang-toggle">
+                            <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+                            <div class="lang-divider"></div>
+                            <button class="lang-btn" data-lang="de" aria-label="Deutsch">DE</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,11 +109,11 @@
                     </button>
                     <nav>
                         <ul>
-                            <li><a href="index.html" class="active">Home</a></li>
-                            <li><a href="product.html">Products</a></li>
-                            <li><a href="quality.html">Quality Certificates</a></li>
-                            <li><a href="service.html">Services</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="index.html" class="active" data-i18n="nav_home">Home</a></li>
+                            <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+                            <li><a href="quality.html" data-i18n="nav_quality">Quality Certificates</a></li>
+                            <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+                            <li><a href="contact.html" data-i18n="nav_contact">Contact Us</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -62,22 +126,22 @@
         <div class="slide active" style="background-image: url('image/1.jpg')">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <p>With over 30 years of experience, Vektron Lubricants provides high-quality petroleum products and services to industries worldwide.</p>
-                <a href="product.html" class="btn">Explore</a>
+                <p data-i18n="slide1_text">With over 30 years of experience, Vektron Lubricants provides high-quality petroleum products and services to industries worldwide.</p>
+                <a href="product.html" class="btn" data-i18n="slide1_btn">Explore</a>
             </div>
         </div>
         <div class="slide" style="background-image: url('image/2.jpg')">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <p>Our extensive distribution network ensures timely delivery of petroleum products to your business, no matter where you're located.</p>
-                <a href="service.html" class="btn">Our Services</a>
+                <p data-i18n="slide2_text">Our extensive distribution network ensures timely delivery of petroleum products to your business, no matter where you're located.</p>
+                <a href="service.html" class="btn" data-i18n="slide2_btn">Our Services</a>
             </div>
         </div>
         <div class="slide" style="background-image: url('image/3.jpg')">
             <div class="slider-overlay"></div>
             <div class="slide-content">
-                <p>Our specialized lubricants are designed to extend equipment life and improve efficiency in industrial applications.</p>
-                <a href="#products" class="btn">View Products</a>
+                <p data-i18n="slide3_text">Our specialized lubricants are designed to extend equipment life and improve efficiency in industrial applications.</p>
+                <a href="#products" class="btn" data-i18n="slide3_btn">View Products</a>
             </div>
         </div>
 
@@ -87,7 +151,6 @@
             <span class="slider-dot" data-slide="2"></span>
         </div>
 
-         <!-- Slider Arrows -->
         <div class="slider-arrow prev">
             <i class="fas fa-chevron-left"></i>
         </div>
@@ -100,7 +163,7 @@
     <section id="about" class="about">
         <div class="container">
             <div class="section-title reveal">
-                <h2>About Us</h2>
+                <h2 data-i18n="about_title">About Us</h2>
             </div>
             <div class="about-content reveal">
                 <div class="about-image">
@@ -109,10 +172,10 @@
             </div>
             <div class="about-content reveal">
                 <div class="about-text-1">
-                    <p>Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.</p>
-                    <p>Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.</p>
-                    <p>At Veektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.</p>
-                    <a href="contact.html" class="btn">Learn More</a>
+                    <p data-i18n="about_p1">Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.</p>
+                    <p data-i18n="about_p2">Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.</p>
+                    <p data-i18n="about_p3">At Vektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.</p>
+                    <a href="contact.html" class="btn" data-i18n="btn_learn_more">Learn More</a>
                 </div>
                 <div class="about-image-1">
                     <img class="video-section" src="image/pnanglan.jpg" alt="About Us Image">
@@ -120,10 +183,10 @@
             </div>
             <div class="about-content reveal">
                 <div class="about-text-2">
-                    <p>Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.</p>
-                    <p>Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.</p>
-                    <p>At Veektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.</p>
-                    <a href="contact.html" class="btn">Learn More</a>
+                    <p data-i18n="about2_p1">Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.</p>
+                    <p data-i18n="about2_p2">Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.</p>
+                    <p data-i18n="about2_p3">At Vektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.</p>
+                    <a href="contact.html" class="btn" data-i18n="btn_learn_more">Learn More</a>
                 </div>
                 <div class="about-image-2">
                     <img class="video-section" src="image/pnanglan2.jpg" alt="About Us Image">
@@ -137,8 +200,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-widget">
-                    <h3>About Vektron Lubricants</h3>
-                    <p>Veektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.</p>
+                    <h3 data-i18n="footer_about">About Vektron Lubricants</h3>
+                    <p data-i18n="footer_about_text">Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.</p>
                     <div class="social-links">
                         <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -147,38 +210,38 @@
                     </div>
                 </div>
                 <div class="footer-widget">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="footer_quick_links">Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="product.html">Products</a></li>
-                        <li><a href="service.html">Services</a></li>
-                        <li><a href="crg.html">Complaints Registration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+                        <li><a href="product.html" data-i18n="nav_products">Products</a></li>
+                        <li><a href="service.html" data-i18n="nav_services">Services</a></li>
+                        <li><a href="crg.html" data-i18n="footer_complaints">Complaints Registration</a></li>
+                        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
-                    <h3>Services</h3>
+                    <h3 data-i18n="nav_services">Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Petroleum Distribution</a></li>
-                        <li><a href="#">Fuel Supply</a></li>
-                        <li><a href="#">Storage Solutions</a></li>
-                        <li><a href="#">Transportation</a></li>
-                        <li><a href="#">Equipment Services</a></li>
+                        <li><a href="#" data-i18n="srv_distribution">Petroleum Distribution</a></li>
+                        <li><a href="#" data-i18n="srv_fuel">Fuel Supply</a></li>
+                        <li><a href="#" data-i18n="srv_storage">Storage Solutions</a></li>
+                        <li><a href="#" data-i18n="srv_transport">Transportation</a></li>
+                        <li><a href="#" data-i18n="srv_equipment">Equipment Services</a></li>
                     </ul>
                 </div>
                 <div class="footer-widget">
-                    <h3>Newsletter</h3>
-                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <h3 data-i18n="footer_newsletter">Newsletter</h3>
+                    <p data-i18n="footer_newsletter_text">Subscribe to our newsletter for the latest updates and offers.</p>
                     <form id="newsletterForm">
                         <div class="form-group">
-                            <input type="email" placeholder="Your Email Address" required>
+                            <input type="email" data-i18n-ph="ph_email" placeholder="Your Email Address" required>
                         </div>
-                        <button type="submit" class="btn">Subscribe</button>
+                        <button type="submit" class="btn" data-i18n="btn_subscribe">Subscribe</button>
                     </form>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 1990 Vektron Lubricants German. All Rights Reserved.</p>
+                <p data-i18n="footer_copyright">&copy; 1990 Vektron Lubricants German. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -187,7 +250,164 @@
     <div id="toastContainer"></div>
 
     <script>
-        // ===== PARTICLE GENERATOR =====
+        // ============================================
+        // TRANSLATION SYSTEM
+        // ============================================
+        const translations = {
+            en: {
+                // Navigation
+                nav_home: "Home",
+                nav_products: "Products",
+                nav_quality: "Quality Certificates",
+                nav_services: "Services",
+                nav_contact: "Contact Us",
+
+                // Hero Slides
+                slide1_text: "With over 30 years of experience, Vektron Lubricants provides high-quality petroleum products and services to industries worldwide.",
+                slide1_btn: "Explore",
+                slide2_text: "Our extensive distribution network ensures timely delivery of petroleum products to your business, no matter where you're located.",
+                slide2_btn: "Our Services",
+                slide3_text: "Our specialized lubricants are designed to extend equipment life and improve efficiency in industrial applications.",
+                slide3_btn: "View Products",
+
+                // About
+                about_title: "About Us",
+                about_p1: "Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.",
+                about_p2: "Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.",
+                about_p3: "At Vektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.",
+                about2_p1: "Vektron Lubricants is a leading provider of petroleum products and industrial solutions. Established in 1990, we have built a reputation for excellence, reliability, and innovation in the petroleum industry.",
+                about2_p2: "Our team of experienced professionals is dedicated to delivering high-quality products and services that meet the specific needs of our clients. We work with businesses across various sectors, including manufacturing, transportation, construction, and energy.",
+                about2_p3: "At Vektron Lubricants, we are committed to sustainable practices and environmental responsibility. We continuously invest in technology and processes that minimize our environmental impact while maximizing efficiency and value for our customers.",
+
+                // Buttons
+                btn_learn_more: "Learn More",
+                btn_subscribe: "Subscribe",
+
+                // Footer
+                footer_about: "About Vektron Lubricants",
+                footer_about_text: "Vektron Lubricants is a leading provider of petroleum products and industrial solutions, serving businesses across various sectors with excellence and reliability.",
+                footer_quick_links: "Quick Links",
+                footer_complaints: "Complaints Registration",
+                footer_newsletter: "Newsletter",
+                footer_newsletter_text: "Subscribe to our newsletter for the latest updates and offers.",
+                footer_copyright: "\u00A9 1990 Vektron Lubricants German. All Rights Reserved.",
+
+                // Services
+                srv_distribution: "Petroleum Distribution",
+                srv_fuel: "Fuel Supply",
+                srv_storage: "Storage Solutions",
+                srv_transport: "Transportation",
+                srv_equipment: "Equipment Services",
+
+                // Placeholders
+                ph_email: "Your Email Address",
+
+                // Toast messages
+                toast_subscribed: "Thank you for subscribing with <strong>{email}</strong>. You'll receive our latest updates.",
+                toast_contact: "Thank you, <strong>{name}</strong>! Your message has been received.",
+                toast_lang_switch: "Language changed to English",
+            },
+
+            de: {
+                // Navigation
+                nav_home: "Startseite",
+                nav_products: "Produkte",
+                nav_quality: "Qualit\u00E4tszertifikate",
+                nav_services: "Dienstleistungen",
+                nav_contact: "Kontakt",
+
+                // Hero Slides
+                slide1_text: "Mit \u00FCber 30 Jahren Erfahrung bietet Vektron Lubricants hochwertige Erd\u00F6lprodukte und Dienstleistungen f\u00FCr Industrien weltweit an.",
+                slide1_btn: "Entdecken",
+                slide2_text: "Unser umfangreiches Vertriebsnetzwerk sorgt f\u00FCr rechtzeitige Lieferung von Erd\u00F6lprodukten an Ihr Unternehmen, unabh\u00E4ngig von Ihrem Standort.",
+                slide2_btn: "Unsere Dienstleistungen",
+                slide3_text: "Unsere speziellen Schmierstoffe sind darauf ausgelegt, die Lebensdauer von Ausr\u00FCstungen zu verl\u00E4ngern und die Effizienz in industriellen Anwendungen zu verbessern.",
+                slide3_btn: "Produkte ansehen",
+
+                // About
+                about_title: "\u00DCber uns",
+                about_p1: "Vektron Lubricants ist ein f\u00FChrender Anbieter von Erd\u00F6lprodukten und industriellen L\u00F6sungen. Seit der Gr\u00FCndung 1990 haben wir uns einen Ruf f\u00FCr Exzellenz, Zuverl\u00E4ssigkeit und Innovation in der Erd\u00F6lindustrie erarbeitet.",
+                about_p2: "Unser Team erfahrener Fachleute widmet sich der Lieferung hochwertiger Produkte und Dienstleistungen, die auf die spezifischen Bed\u00FCrfnisse unserer Kunden zugeschnitten sind. Wir arbeiten mit Unternehmen aus verschiedenen Branchen zusammen, darunter Fertigung, Transport, Bauwesen und Energie.",
+                about_p3: "Bei Vektron Lubricants verpflichten wir uns zu nachhaltigen Praktiken und Umweltverantwortung. Wir investieren kontinuierlich in Technologien und Prozesse, die unsere Umweltauswirkungen minimieren und gleichzeitig Effizienz und Mehrwert f\u00FCr unsere Kunden maximieren.",
+                about2_p1: "Vektron Lubricants ist ein f\u00FChrender Anbieter von Erd\u00F6lprodukten und industriellen L\u00F6sungen. Seit der Gr\u00FCndung 1990 haben wir uns einen Ruf f\u00FCr Exzellenz, Zuverl\u00E4ssigkeit und Innovation in der Erd\u00F6lindustrie erarbeitet.",
+                about2_p2: "Unser Team erfahrener Fachleute widmet sich der Lieferung hochwertiger Produkte und Dienstleistungen, die auf die spezifischen Bed\u00FCrfnisse unserer Kunden zugeschnitten sind. Wir arbeiten mit Unternehmen aus verschiedenen Branchen zusammen, darunter Fertigung, Transport, Bauwesen und Energie.",
+                about2_p3: "Bei Vektron Lubricants verpflichten wir uns zu nachhaltigen Praktiken und Umweltverantwortung. Wir investieren kontinuierlich in Technologien und Prozesse, die unsere Umweltauswirkungen minimieren und gleichzeitig Effizienz und Mehrwert f\u00FCr unsere Kunden maximieren.",
+
+                // Buttons
+                btn_learn_more: "Mehr erfahren",
+                btn_subscribe: "Abonnieren",
+
+                // Footer
+                footer_about: "\u00DCber Vektron Lubricants",
+                footer_about_text: "Vektron Lubricants ist ein f\u00FChrender Anbieter von Erd\u00F6lprodukten und industriellen L\u00F6sungen und bedient Unternehmen in verschiedenen Branchen mit Exzellenz und Zuverl\u00E4ssigkeit.",
+                footer_quick_links: "Schnelllinks",
+                footer_complaints: "Beschwerderegistrierung",
+                footer_newsletter: "Newsletter",
+                footer_newsletter_text: "Abonnieren Sie unseren Newsletter f\u00FCr die neuesten Updates und Angebote.",
+                footer_copyright: "\u00A9 1990 Vektron Lubricants German. Alle Rechte vorbehalten.",
+
+                // Services
+                srv_distribution: "Erd\u00F6lverteilung",
+                srv_fuel: "Kraftstoffversorgung",
+                srv_storage: "Lagerl\u00F6sungen",
+                srv_transport: "Transportwesen",
+                srv_equipment: "Ausr\u00FCstungsservice",
+
+                // Placeholders
+                ph_email: "Ihre E-Mail-Adresse",
+
+                // Toast messages
+                toast_subscribed: "Vielen Dank f\u00FCr Ihr Abonnement mit <strong>{email}</strong>. Sie erhalten unsere neuesten Updates.",
+                toast_contact: "Vielen Dank, <strong>{name}</strong>! Ihre Nachricht wurde empfangen.",
+                toast_lang_switch: "Sprache auf Deutsch umgestellt",
+            }
+        };
+
+        let currentLang = localStorage.getItem('vektron_lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('vektron_lang', lang);
+            document.documentElement.lang = lang;
+
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Translate all text content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+                const key = el.getAttribute('data-i18n-ph');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+
+            // Show toast confirmation
+            showToast(translations[lang].toast_lang_switch, 2500);
+        }
+
+        // Bind language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Apply saved language on load
+        setLanguage(currentLang);
+
+        // ============================================
+        // PARTICLE GENERATOR
+        // ============================================
         (function createParticles() {
             const container = document.getElementById('particles');
             const count = 30;
@@ -202,7 +422,9 @@
             }
         })();
 
-        // ===== MOBILE MENU TOGGLE =====
+        // ============================================
+        // MOBILE MENU TOGGLE
+        // ============================================
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const nav = document.querySelector('nav');
         const menuIcon = mobileMenuBtn.querySelector('i');
@@ -213,7 +435,6 @@
             menuIcon.classList.toggle('fa-times');
         });
 
-        // Close mobile menu on link click
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -222,7 +443,9 @@
             });
         });
 
-        // ===== SLIDER FUNCTIONALITY =====
+        // ============================================
+        // SLIDER FUNCTIONALITY
+        // ============================================
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.slider-dot');
         const prevBtn = document.querySelector('.slider-arrow.prev');
@@ -278,7 +501,9 @@
 
         sliderInterval = setInterval(nextSlide, 5000);
 
-        // ===== SMOOTH SCROLLING =====
+        // ============================================
+        // SMOOTH SCROLLING
+        // ============================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -293,7 +518,9 @@
             });
         });
 
-        // ===== HEADER SCROLL EFFECT =====
+        // ============================================
+        // HEADER SCROLL EFFECT
+        // ============================================
         const headerMain = document.getElementById('headerMain');
 
         window.addEventListener('scroll', () => {
@@ -304,7 +531,9 @@
             }
         });
 
-        // ===== SCROLL REVEAL =====
+        // ============================================
+        // SCROLL REVEAL
+        // ============================================
         const revealElements = document.querySelectorAll('.reveal');
 
         const revealObserver = new IntersectionObserver((entries) => {
@@ -320,7 +549,9 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // ===== TOAST NOTIFICATION =====
+        // ============================================
+        // TOAST NOTIFICATION
+        // ============================================
         function showToast(message, duration = 4000) {
             const container = document.getElementById('toastContainer');
             const toast = document.createElement('div');
@@ -343,27 +574,32 @@
             }, duration);
         }
 
-        // ===== NEWSLETTER FORM =====
+        // ============================================
+        // NEWSLETTER FORM
+        // ============================================
         const newsletterForm = document.getElementById('newsletterForm');
 
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const email = newsletterForm.querySelector('input[type="email"]').value;
-                showToast(`Thank you for subscribing with <strong>${email}</strong>. You'll receive our latest updates.`);
+                const msg = translations[currentLang].toast_subscribed.replace('{email}', email);
+                showToast(msg);
                 newsletterForm.reset();
             });
         }
 
-        // ===== CONTACT FORM (if exists on other pages) =====
+        // ============================================
+        // CONTACT FORM (if exists)
+        // ============================================
         const contactForm = document.getElementById('contactForm');
 
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
                 const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                showToast(`Thank you, <strong>${name}</strong>! Your message has been received.`);
+                const msg = translations[currentLang].toast_contact.replace('{name}', name);
+                showToast(msg);
                 contactForm.reset();
             });
         }
